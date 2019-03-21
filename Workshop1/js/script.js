@@ -14,9 +14,20 @@ function loadBookData() {
     if (bookDataFromLocalStorage == null) {
         bookDataFromLocalStorage = bookData;
         localStorage.setItem('bookData', JSON.stringify(bookDataFromLocalStorage));
-    }
+    }    
 }
+
 
 $(function () {
     loadBookData();
 });
+
+var localdataSource = new kendo.data.DataSource({
+    data:bookData
+});
+$("#book_grid").kendGrid({
+    dataSource:localdataSource,
+        
+   
+    ]
+})
